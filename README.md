@@ -1,5 +1,8 @@
 # realmate-challenge
 
+> [!IMPORTANT]
+> As instruções adicionais para a solução do desafio se encontram final do arquivo README.md, na seção `Solução`.
+
 ## Introdução
 
 O objetivo deste desafio é avaliar seus conhecimentos em **APIs** e **Webhooks**, além da sua capacidade de aprender rapidamente e implementar soluções eficientes, usando frameworks renomados como **Django** e **Django Rest Framework (DRF)**.
@@ -157,3 +160,41 @@ Caso tenha dúvidas sobre o desafio, entre em contato com nossa equipe de tecnol
 Boa sorte! 🚀
 
 _Equipe Realmate_
+
+
+# Solução
+## Overview da Solução
+A solução do desafio foi feita em um novo app, o diretório webhooks. Os arquivos principais da solução são os seguintes:
+
+```bash
+streamlit_app.py                  # Implementação do frontend utilizando Streamlit
+webhooks
+    ├── models.py                 # Definição dos modelos de banco de dados para conversas e mensagens
+    ├── serializer.py             # Serializadores para transformar dados em JSON e vice-versa
+    ├── urls.py                   # Configuração das rotas para os webhooks e endpoints da API
+    └── views.py                  # Implementação da lógica dos webhooks e manipulação das requisições
+```
+
+Mais detalhes podem ser observados nos próprios arquivos.
+
+## Preview do frontend
+![alt text](image.png)
+
+## Instalação das dependências da Solução
+
+Após clonar o projeto, execute o seguinte comando:
+
+```bash
+python -m venv .venv && \
+source .venv/bin/activate && \
+poetry install && \
+python manage.py migrate && \
+python manage.py runserver
+```
+
+Abra outro terminal no mesmo diretório do projeto e execute o seguinte comando:
+
+```bash
+source .venv/bin/activate && \
+streamlit run streamlit_app.py
+```
